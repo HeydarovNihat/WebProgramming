@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-05T18:56:29.768Z",
+    "end": "2026-11-05T18:56:41.106Z",
+    "duration": 11338,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "70a951f1-a1b8-4c06-99c7-5a3d8026a5b0",
+      "title": "",
+      "fullFile": "C:\\Users\\Aydan\\OneDrive\\Desktop\\Sport Facility\\WebProgrammingProject\\tests\\selenium-test.js",
+      "file": "\\tests\\selenium-test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+          "title": "Angular Application - Selenium Tests",
+          "fullFile": "C:\\Users\\Aydan\\OneDrive\\Desktop\\Sport Facility\\WebProgrammingProject\\tests\\selenium-test.js",
+          "file": "\\tests\\selenium-test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Angular Application - Selenium Tests\"",
+              "fullTitle": "Angular Application - Selenium Tests \"before each\" hook in \"Angular Application - Selenium Tests\"",
+              "timedOut": false,
+              "duration": 998,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const options = new chrome.Options();\n        options.addArguments('--headless=new');\n        options.addArguments('--no-sandbox');\n        options.addArguments('--disable-dev-shm-usage');\n        options.addArguments('--window-size=1920,1080');\n        driver = await new Builder()\n            .forBrowser('chrome')\n            .setChromeOptions(options)\n            .build();",
+              "err": {},
+              "uuid": "9ab45c76-7d50-47e5-9f9f-9b16e307f3f5",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Angular Application - Selenium Tests\"",
+              "fullTitle": "Angular Application - Selenium Tests \"after each\" hook in \"Angular Application - Selenium Tests\"",
+              "timedOut": false,
+              "duration": 130,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver) {\n            await driver.quit();\n        }",
+              "err": {},
+              "uuid": "fea611b5-79a4-47e6-a1f2-e630d872768a",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should load Angular application successfully",
+              "fullTitle": "Angular Application - Selenium Tests should load Angular application successfully",
+              "timedOut": false,
+              "duration": 1129,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('http://localhost:4200/');\n        await driver.wait(\n            until.elementLocated(By.css('body')),\n            10000\n        );\n        const title = await driver.getTitle();\n        assert.ok(title.length > 0, 'Page title should not be empty');\n        console.log('Page title:', title);",
+              "err": {},
+              "uuid": "86213e94-f3f5-415e-a783-1340b1d1c7a6",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a registered user to log in",
+              "fullTitle": "Angular Application - Selenium Tests should allow a registered user to log in",
+              "timedOut": false,
+              "duration": 1436,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\n            'http://localhost:4200/Login-component'\n        );\n        await driver.wait(\n            until.elementLocated(By.css('form')),\n            10000\n        );\n        const email = await driver.findElement(\n            By.id('InputEmail')\n        );\n        const password = await driver.findElement(\n            By.id('InputPassword')\n        );\n        await email.sendKeys(TEST_EMAIL);\n        await password.sendKeys(TEST_PASSWORD);\n        await driver.findElement(\n            By.css('button[type=\"submit\"]')\n        ).click();\n        // Check that the login form submission did not cause an error\n        assert.ok(\n            await driver.getCurrentUrl().then(url =>\n                !url.includes('Registration-component')\n            ),\n            'Login page should remain accessible'\n        );\n        console.log('Login submitted for:', TEST_EMAIL);",
+              "err": {},
+              "uuid": "06e2ca10-b0ad-4439-bf2d-bf9687f71f90",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a logged-in user to join a tournament",
+              "fullTitle": "Angular Application - Selenium Tests should allow a logged-in user to join a tournament",
+              "timedOut": false,
+              "duration": 1804,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('http://localhost:4200/');\n        await driver.executeScript(() => {\n            window.localStorage.setItem('userLoggedIn', 'true');\n        });\n        await driver.get(\n            `http://localhost:4200/Tournaments-component?username=${TEST_USERNAME}&role=player`\n        );\n        await driver.executeScript(() => {\n            window.localStorage.setItem('userLoggedIn', 'true');\n        });\n        const card = await driver.wait(\n            until.elementLocated(By.css('.card')),\n            10000\n        );\n        const tournamentName = await card.findElement(\n            By.css('.card-title')\n        ).getText();\n        assert.ok(\n            tournamentName.length > 0,\n            'Tournament name should be displayed'\n        );\n        const joinButton = await card.findElement(\n            By.id('Join')\n        );\n        await driver.wait(\n            until.elementIsVisible(joinButton),\n            5000\n        );\n        await driver.wait(\n            until.elementIsEnabled(joinButton),\n            5000\n        );\n        await joinButton.click();\n        console.log('Tournament:', tournamentName);",
+              "err": {},
+              "uuid": "636a0e12-ab2b-458d-9ce1-789e66211ef2",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow a logged-in user to join a course",
+              "fullTitle": "Angular Application - Selenium Tests should allow a logged-in user to join a course",
+              "timedOut": false,
+              "duration": 1499,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get('http://localhost:4200/');\n        await driver.executeScript(() => {\n            window.localStorage.setItem('userLoggedIn', 'true');\n        });\n        await driver.get(\n            `http://localhost:4200/Courses-component?username=${TEST_USERNAME}&role=player`\n        );\n        await driver.executeScript(() => {\n            window.localStorage.setItem('userLoggedIn', 'true');\n        });\n        const card = await driver.wait(\n            until.elementLocated(By.css('.card')),\n            10000\n        );\n        const courseName = await card.findElement(\n            By.css('.card-title')\n        ).getText();\n        assert.ok(\n            courseName.length > 0,\n            'Course name should be displayed'\n        );\n        const joinButton = await card.findElement(\n            By.id('Join')\n        );\n        await driver.wait(\n            until.elementIsVisible(joinButton),\n            5000\n        );\n        await driver.wait(\n            until.elementIsEnabled(joinButton),\n            5000\n        );\n        await joinButton.click();\n        console.log('Course:', courseName);",
+              "err": {},
+              "uuid": "6a0dc066-199a-473a-bb80-16fb64d48351",
+              "parentUUID": "690ce492-505d-4bc6-b0bb-da9d6acb2259",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "86213e94-f3f5-415e-a783-1340b1d1c7a6",
+            "06e2ca10-b0ad-4439-bf2d-bf9687f71f90",
+            "636a0e12-ab2b-458d-9ce1-789e66211ef2",
+            "6a0dc066-199a-473a-bb80-16fb64d48351"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5868,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "12.0.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "test-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "reportFilename": "test-report",
+        "html": "true",
+        "json": "true",
+        "showPassed": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
