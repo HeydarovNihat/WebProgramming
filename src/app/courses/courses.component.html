@@ -1,0 +1,20 @@
+<div class="alert alert-danger" id="warning" role="alert" *ngIf="warning.length !== 0">{{warning}}</div>
+<div class="alert alert-danger" id="beforeLogin" role="alert" *ngIf="userLoggedIn === 'false' && beforeLogin.length !== 0">{{beforeLogin}}</div>
+<div class="alert alert-success" id="success" role="alert" *ngIf="successfullyJoinedMessage.length !== 0">{{successfullyJoinedMessage}}</div>
+<div class="container" id="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let course of courses">
+            <div class="card">
+                <img class="card-img-top" src={{course.getImage()}}>
+                <div class="card-body">
+                    <h5 class="card-title">{{course.getName()}}</h5>
+                    <p class="card-text">TutorName: {{course.getTutorName()}}</p>
+                    <p class="card-text">Times a week: {{course.getWeekFrequency()}}</p>
+                    <p class="card-text">Time: {{course.getStartTime()}}</p>
+                    <button class="btn btn-success" id="Join" (click)="onJoin(course.getName())" *ngIf="userLoggedIn === 'true'">Join</button>
+                    <button class="btn btn-primary" id="leave" (click)="onLeave(course.getName())" *ngIf="userLoggedIn === 'true'">Leave</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

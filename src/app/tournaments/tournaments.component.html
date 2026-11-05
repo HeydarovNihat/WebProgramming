@@ -1,0 +1,18 @@
+<div class="alert alert-danger" id="warning" role="alert" *ngIf="warning.length !== 0">{{warning}}</div>
+<div class="alert alert-danger" id="beforeLogin" role="alert" *ngIf="userLoggedIn === 'false' && beforeLogin.length !== 0 ">{{beforeLogin}}</div>
+<div class="alert alert-success" id="successfullyJoinedMessage" role="alert" *ngIf="successfullyJoinedMessage.length !==0 ">{{successfullyJoinedMessage}}</div>
+<div class="container" id="container">
+    <div class="row" >
+        <div class="col-sm-3" *ngFor="let tournament of tournaments">
+        <div class="card">
+            <img class="card-img-top" src={{tournament.getImage()}} alt="Card image cap">
+            <div class="card-body">
+               <h5 class="card-title">{{tournament.getName()}}</h5>
+               <p class="card-text">Starts {{tournament.getStartDate()}} | Reporting time {{tournament.getReportTime()}} </p>
+               <button class="btn btn-success" id="Join" (click)="onJoin(tournament.getName())" *ngIf="userLoggedIn === 'true'  ">Join</button>
+               <button class="btn btn-primary" id="leave" (click)="onLeave(tournament.getName())" *ngIf="userLoggedIn === 'true'">Leave</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

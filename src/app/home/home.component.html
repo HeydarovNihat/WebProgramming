@@ -1,0 +1,255 @@
+   
+      <img class="d-block w-100" src="badminton1.jpg" >
+       
+
+        
+
+<h3>Last Tournament Winners</h3>
+<div class="container">
+<div class="row">
+    <div class="col-sm-3">
+<div class="card" >
+<div class="card-header" style="font-size:bold;">Kids</div>
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item">Player1</li>
+    <li class="list-group-item">Player2</li>
+    <li class="list-group-item">Player3</li>
+</ol>
+</div>
+
+</div>
+
+    
+    
+    <div class="col-sm-3">
+        <div class="card" >
+        <div class="card-header" style="font-size:bold;">Women’s Singles</div>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Player4</li>
+            <li class="list-group-item">Player5</li>
+            <li class="list-group-item">Player6</li>
+        </ol>
+        </div>
+        
+        </div>
+        <div class="col-sm-3">
+            <div class="card" >
+            <div class="card-header" style="font-size:bold;">Women’s Doubles</div>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Player7</li>
+                <li class="list-group-item">Player8</li>
+                <li class="list-group-item">Player9</li>
+            </ol>
+            </div>
+            
+            </div><div class="col-sm-3">
+            <div class="card" >
+                <div class="card-header" style="font-size:bold;">Mixed Doubles</div>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">Player10</li>
+                    <li class="list-group-item">Player11</li>
+                    <li class="list-group-item">Player12</li>
+                </ol>
+                </div></div>
+</div>
+
+<div class="row" id="SecondRow">
+    <div class="col-sm-3">
+<div class="card" >
+<div class="card-header" style="font-size:bold;">Men’s Singles (Open)</div>
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item">Player13</li>
+    <li class="list-group-item">Player14</li>
+    <li class="list-group-item">Player15</li>
+</ol>
+</div>
+
+</div>
+
+    
+    
+    <div class="col-sm-3">
+        <div class="card" >
+        <div class="card-header" style="font-size:bold;">Men’s Doubles (Intermediate)</div>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Player16</li>
+            <li class="list-group-item">Player17</li>
+            <li class="list-group-item">Player18</li>
+        </ol>
+        </div>
+        
+        </div>
+        <div class="col-sm-3">
+            <div class="card" >
+            <div class="card-header" style="font-size:bold;">4Fun</div>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item">Player19</li>
+                <li class="list-group-item">Player20</li>
+                <li class="list-group-item">Player21</li>
+            </ol>
+            </div>
+            
+            </div>
+</div>
+</div>
+<h3>Upcoming Tournament</h3>
+<div class="container" id="cards">
+    <div class="row">
+
+<div class="col-sm-4 ">
+<div class="card" >
+
+    <img class="card-img-top" src="Img1.jpg" alt="Card image cap">
+    <div class="card-body">
+    <h5 class="card-title">Men's Doubles (Open)</h5>
+    <p class="card-text">Starts 10:00 am | Reporting time 9:45</p>
+    <button type="button"  class="btn btn-primary" (click)="openMensDoubles()">Details</button>
+    
+    </div>
+    </div>
+</div>
+
+
+<div class="col-sm-4">
+    <div class="card" >
+        <img class="card-img-top" src="Img1.jpg" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Women's Doubles (Open)</h5>
+        <p class="card-text">Starts 10:00 am | Reporting time 9:45</p>
+        <button type="button" class="btn btn-primary" (click)="openWomensDoubles()">Details</button>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" >
+            <img class="card-img-top" src="Img1.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">Mixed Doubles (Open)</h5>
+            <p class="card-text">Starts 01:00 pm | Reporting time 12:45pm</p>
+            <button type="button" class="btn btn-primary" (click)="openMixedDoubles()">Details</button>
+            </div>
+            </div>
+        </div>
+         
+                
+         
+      
+</div>
+
+
+</div>
+
+
+
+  <div class="modal"  #mensDoublesModal>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Men's Doubles (Open)</h5>
+          
+        </div>
+        <div class="modal-body">
+            Scoring System:
+
+            A match consists of the best of 3 games of 21 points.
+            Every time there is a serve – there is a point scored.
+            The side winning a rally adds a point to its score.
+            At 20 all, the side which gains a 2 point lead first, wins that game.
+            At 29 all, the side scoring the 30th point, wins that game.
+            The side winning a game serves first in the next game.<br><br>
+
+            Doubles:
+A side has only one ‘set’.
+The service passes consecutively to the players as shown in the diagram.
+At the beginning of the game and when the score is even, the server serves from the right service court. When it is odd, the server serves from the left court.
+If the serving side wins a rally, the serving side scores a point and the same server serves again from the alternate service court.
+If the receiving side wins a rally, the receiving side scores a point. The receiving side becomes the new serving side.
+The players do not change their respective service courts until they win a point when their side is serving.
+If players commit an error in the service court, the error is corrected when the mistake is discovered.
+
+In a doubles match between A & B against C & D.  A & B won the toss and decided to serve. A to serve to C. A shall be the initial server while C shall be the initial receiver.<br><br>
+
+<b>To join tournament go tournaments section then press join if you are logged in but you aren't then first log-in</b>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeMensDoubles()">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal"  #womensDoublesModal>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Women's Doubles (Open)</h5>
+          
+        </div>
+        <div class="modal-body">
+            Scoring System:
+
+            A match consists of the best of 3 games of 21 points.
+            Every time there is a serve – there is a point scored.
+            The side winning a rally adds a point to its score.
+            At 20 all, the side which gains a 2 point lead first, wins that game.
+            At 29 all, the side scoring the 30th point, wins that game.
+            The side winning a game serves first in the next game.<br><br>
+
+            Doubles:
+A side has only one ‘set’.
+The service passes consecutively to the players as shown in the diagram.
+At the beginning of the game and when the score is even, the server serves from the right service court. When it is odd, the server serves from the left court.
+If the serving side wins a rally, the serving side scores a point and the same server serves again from the alternate service court.
+If the receiving side wins a rally, the receiving side scores a point. The receiving side becomes the new serving side.
+The players do not change their respective service courts until they win a point when their side is serving.
+If players commit an error in the service court, the error is corrected when the mistake is discovered.
+
+In a doubles match between A & B against C & D.  A & B won the toss and decided to serve. A to serve to C. A shall be the initial server while C shall be the initial receiver.<br><br>
+
+<b>To join tournament go tournaments section then press join if you are logged in but you aren't then first log-in</b>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeWomensDoubles()">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal"  #mixedDoublesModal>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Mixed Doubles (Open)</h5>
+          
+        </div>
+        <div class="modal-body">
+            Scoring System:
+
+            A match consists of the best of 3 games of 21 points.
+            Every time there is a serve – there is a point scored.
+            The side winning a rally adds a point to its score.
+            At 20 all, the side which gains a 2 point lead first, wins that game.
+            At 29 all, the side scoring the 30th point, wins that game.
+            The side winning a game serves first in the next game.<br><br>
+
+            Doubles:
+A side has only one ‘set’.
+The service passes consecutively to the players as shown in the diagram.
+At the beginning of the game and when the score is even, the server serves from the right service court. When it is odd, the server serves from the left court.
+If the serving side wins a rally, the serving side scores a point and the same server serves again from the alternate service court.
+If the receiving side wins a rally, the receiving side scores a point. The receiving side becomes the new serving side.
+The players do not change their respective service courts until they win a point when their side is serving.
+If players commit an error in the service court, the error is corrected when the mistake is discovered.
+
+In a doubles match between A & B against C & D.  A & B won the toss and decided to serve. A to serve to C. A shall be the initial server while C shall be the initial receiver.<br><br>
+
+<b>To join tournament go tournaments section then press join if you are logged in but you aren't then first log-in</b>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeMixedDoubles()">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
